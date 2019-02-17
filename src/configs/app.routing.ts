@@ -5,7 +5,7 @@ export function RoutingConfiguration($stateProvider: StateProvider) {
       {
           name: 'index',
           url: '',
-          template: 'Hello world!'
+          component: 'index',
       },
   ];
   states.forEach(state => {
