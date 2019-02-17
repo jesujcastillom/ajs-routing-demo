@@ -1,0 +1,32 @@
+{
+  "name": "ajs-routing-demo",
+  "version": "1.0.0",
+  "description": "Rankmi AngularJS-Routing Code Kata demo project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server",
+    "start:dev": "npm start -- --open --color"
+  },
+  "author": "Jesu Castillo",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/angular": "^1.6.54",
+    "@types/node": "^11.9.4",
+    "css-loader": "^2.1.0",
+    "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.11.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "ts-loader": "^5.3.3",
+    "typescript": "^3.3.3",
+    "webpack": "^4.29.4",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.1.14"
+  },
+  "dependencies": {
+    "@uirouter/angularjs": "^1.0.22",
+    "angular": "^1.7.7",
+    "bootstrap": "^4.3.1"
+  }
+}
