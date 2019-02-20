@@ -1,0 +1,16 @@
+<table class="table">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Language</th>
+        <th>Stars</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="repo in $ctrl.repos track by repo.id">
+        <td>{{repo.name}}</td>
+        <td>{{repo.language}}</td>
+        <td>{{repo.stargazers_count}}</td>
+    </tr>
+    </tbody>
+</table>
