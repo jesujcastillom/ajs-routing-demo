@@ -1,6 +1,6 @@
 {
   "name": "ajs-routing-demo",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "description": "Rankmi AngularJS-Routing Code Kata demo project",
   "main": "index.js",
   "scripts": {
