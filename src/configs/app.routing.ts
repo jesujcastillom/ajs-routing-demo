@@ -8,7 +8,6 @@ export function RoutingConfiguration($stateProvider: StateProvider, $urlServiceP
         {
             name: 'index',
             url: '/home',
-            component: 'index',
             resolve: {
                 user: [
                     "$http",
@@ -20,6 +19,17 @@ export function RoutingConfiguration($stateProvider: StateProvider, $urlServiceP
                 ]
             },
             abstract: true,
+            views: {
+                '@': {
+                    component: 'index'
+                },
+                'sideBar@index': {
+                    component: 'sideBar'
+                },
+                'navBar@index': {
+                    component: 'navBar',
+                }
+            }
         },
         {
             name: 'index.user',
