@@ -4,6 +4,7 @@
         <th>Name</th>
         <th>Language</th>
         <th>Stars</th>
+        <th></th>
     </tr>
     </thead>
     <tbody>
@@ -11,6 +12,11 @@
         <td>{{repo.name}}</td>
         <td>{{repo.language}}</td>
         <td>{{repo.stargazers_count}}</td>
+        <td>
+            <a ui-sref="index.repos.detail({repoId: repo.id})">
+                Detail
+            </a>
+        </td>
     </tr>
     </tbody>
 </table>
