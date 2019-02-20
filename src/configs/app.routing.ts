@@ -1,5 +1,6 @@
 import {StateProvider, Ng1StateDeclaration, Transition, UrlService} from "@uirouter/angularjs";
 import {IHttpService} from "angular";
+import {ILazyLoad} from "oclazyload";
 
 export function RoutingConfiguration($stateProvider: StateProvider, $urlServiceProvider: UrlService) {
     $urlServiceProvider.rules.otherwise('/home');
@@ -26,18 +27,14 @@ export function RoutingConfiguration($stateProvider: StateProvider, $urlServiceP
             component: 'user',
         },
         {
-            name: 'index.repos',
+            name: 'index.repos.**',
             url: '/repos',
-            component: 'repos',
-            resolve: {
-                repos: ['$transition$', '$http', ($transition$: Transition, $http: IHttpService) => {
-                    return $transition$.injector()
-                        .getAsync('user')
-                        .then(({repos_url}) => {
-                            return $http.get(repos_url)
-                                .then(({data: repos}) => repos);
-                        })
-                }],
+            lazyLoad: (transition: Transition) => {
+                return import('../repos/repos.module')
+                    .then(({ReposModule}) => {
+                        const $ocLazyLoad: ILazyLoad = transition.injector().get('$ocLazyLoad');
+                        return $ocLazyLoad.inject(ReposModule);
+                    });
             }
         }
     ];
