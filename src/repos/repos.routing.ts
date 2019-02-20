@@ -23,9 +23,12 @@ export function RoutingConfiguration($stateProvider: StateProvider) {
             name: 'index.repos.list',
             url: '',
             component: 'repos',
+            onExit: () => {
+                return confirm('You are leaving this state, are you sure?');
+            },
         },
     ];
-    states.forEach((state)=>{
+    states.forEach((state) => {
         $stateProvider.state(state);
     });
 }

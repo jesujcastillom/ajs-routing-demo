@@ -35,6 +35,9 @@ export function RoutingConfiguration($stateProvider: StateProvider, $urlServiceP
             name: 'index.user',
             url: '',
             component: 'user',
+            onEnter: () => {
+                alert('You are entering the worst ui ever...');
+            }
         },
         {
             name: 'index.repos.**',
